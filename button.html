@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>涟漪 - 按钮</title>
+    <style>
+        html, body, button {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000033;
+            height: 100vh;
+        }
+        .button {
+            position: relative;
+            padding: 10px 50px;
+            color: #fff;
+            background: linear-gradient(90deg, #755bea, #ff72c0);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .button span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: wave 1s linear infinite;
+        }
+        @keyframes wave {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: .5;
+            }
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button">点我试试</div>
+    </div>
+    <script>
+        const button = document.querySelector('.button')
+        button.onclick = (e) => {
+            const x = (e.pageX || e.clientX) - e.target.offsetLeft
+            const y = (e.pageY || e.clientY) - e.target.offsetTop
+            const mask = document.createElement('span')
+            mask.style.cssText = `left: ${x}px; top: ${y}px`
+            button.append(mask)
+            setTimeout(() => mask.remove(), 1000)
+        }
+    </script>
+</body>
+</html>
