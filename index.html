@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Components/RainCloud.js"></script>
+    <script src="Components/RippleButton.js"></script>
+    <script src="vue.min.js"></script>
+    <!-- 样式文件要操作dom，因此通过defer引入 -->
+    <script defer src="styles/hightLight.js"></script>
+    <style>
+        body {
+
+
+            max-width: 600px;
+            margin: 80px auto;
+
+            font-size: 1.5rem;
+            font-family: Helvetica;
+            background-color: #020617;
+            color: #94a3b8;
+        }
+
+        .any {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div kakashi-hilght class="any">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    </div>
+    <div kakashi-hilght style="--lighting-color: orange; --lighting-highlight-color: yellow;">
+        自定义颜色光点
+    </div>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
