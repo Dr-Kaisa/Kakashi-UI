@@ -8,7 +8,11 @@
 
 # 二、示例
 
-两步：
+通常分为两步
+
+### 1、使用组件
+
+如果是组件的话，只需要：
 
 - 引入组件对应的js文件
 - 使用该组件
@@ -49,6 +53,59 @@
 </html>
 ```
 
+### 2、使用样式
+
+如果是样式，只需要：
+
+- 引入样式文件
+- 然后在目标元素上加上样式属性
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 样式文件要操作dom，因此通过defer引入 -->
+    <script defer src="styles/highLight.js"></script>
+    <style>
+        body {
+
+
+            max-width: 600px;
+            margin: 80px auto;
+
+            font-size: 1.5rem;
+            font-family: Helvetica;
+            background-color: #020617;
+            color: #94a3b8;
+        }
+
+        .any {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div kakashi-highlight class="any"> <!-- 只需添加该属性即可 -->
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    </div>
+    <div kakashi-highlight style="--lighting-color: orange; --lighting-highlight-color: yellow;">
+        可自定义渐变颜色
+    </div>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
+```
+
 
 
 
@@ -63,10 +120,10 @@
 
 ![PixPin_2025-09-07_22-36-53](./assets/PixPin_2025-09-07_22-36-53.gif)
 
-| 属性           | 说明 |
-| -------------- | ---- |
-| --cloud-height | 高度 |
-| --cloud-width  | 宽度 |
+| 属性     | 说明 |
+| -------- | ---- |
+| --height | 高度 |
+| --width  | 宽度 |
 
 PS：建议宽高比：1比1
 
@@ -74,6 +131,18 @@ PS：建议宽高比：1比1
 
 
 
+##### [ripple-button]([Kakashi-UI/Components/RippleButton.js at master · Dr-Kaisa/Kakashi-UI](https://github.com/Dr-Kaisa/Kakashi-UI/blob/master/Components/RippleButton.js))
+
+波纹按钮，可自定义颜色和宽高
+
+<img src="./assets/PixPin_2025-09-08_00-47-00.gif" alt="PixPin_2025-09-08_00-47-00" style="zoom:80%;float:le" />
+
+| 属性          | 说明         |
+| ------------- | ------------ |
+| --height      | 高度         |
+| --width       | 宽度         |
+| --start-color | 渐变起始颜色 |
+| --end-color   | 渐变终止颜色 |
 
 
 
@@ -83,6 +152,16 @@ PS：建议宽高比：1比1
 
 
 
+# 四、样式详情
+
+##### kakashi-highlight
+
+悬停聚光灯样式，可作用于元素内的所有文本
+
+| 属性                       | 说明         |
+| -------------------------- | ------------ |
+| --lighting-color           | 默认字体颜色 |
+| --lighting-highlight-color | 高亮颜色     |
 
 
 

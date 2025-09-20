@@ -2,7 +2,7 @@
   // 1. 创建一个 style 标签，把样式注入
   const style = document.createElement("style");
   style.innerHTML = `
-[kakashi-hilght] {
+[kakashi-highlight] {
     text-decoration: none;
     display: inline-block;
     color: transparent;
@@ -31,7 +31,7 @@
   document.head.appendChild(style);
 
   // 2. 找到所有带属性的元素
-  const highlights = document.querySelectorAll("[kakashi-hilght]");
+  const highlights = document.querySelectorAll("[kakashi-highlight]");
 
   function setPositions() {
     highlights.forEach((el) => {

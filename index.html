@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="Components/RainCloud.js"></script>
-    <script src="Components/RippleButton.js"></script>
-    <script src="vue.min.js"></script>
     <!-- 样式文件要操作dom，因此通过defer引入 -->
-    <script defer src="styles/hightLight.js"></script>
+    <script defer src="styles/highLight.js"></script>
     <style>
         body {
 
@@ -30,11 +27,12 @@
 </head>
 
 <body>
-    <div kakashi-hilght class="any">
+
+    <div kakashi-highlight class="any"> <!-- 只需添加该属性即可 -->
         Lorem ipsum dolor sit, amet consectetur adipisicing elit.
     </div>
-    <div kakashi-hilght style="--lighting-color: orange; --lighting-highlight-color: yellow;">
-        自定义颜色光点
+    <div kakashi-highlight style="--lighting-color: orange; --lighting-highlight-color: yellow;">
+        可自定义渐变颜色
     </div>
     <script>
 
